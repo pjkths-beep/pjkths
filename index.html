@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="박진경 교수">
+<link rel="apple-touch-icon" href="icon192.png">
+<link rel="manifest" href="manifest.json">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>박진경 교수 | 가톨릭관동대학교 스포츠레저학과</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a2e;--ink2:#2d3561;--gold:#c9a84c;--gold2:#e8c97e;--cream:#faf8f3;--cream2:#f0ece0;--white:#fff;--gray:#6b7280;--line:rgba(26,26,46,0.1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
+.reveal.visible{opacity:1;transform:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,243,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:62px;}
+.nav-brand{font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink2);}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--gray);text-decoration:none;letter-spacing:.5px;transition:color .2s;}
+.nav-links a:hover{color:var(--ink2);}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink2);}
+#hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:62px;overflow:hidden;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 6% 80px 8%;}
+.hero-dept{font-size:11px;font-weight:700;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.hero-dept::before{content:'';display:block;width:26px;height:1.5px;background:var(--gold);}
+.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,62px);line-height:1.08;color:var(--ink2);margin-bottom:4px;}
+.hero-name-ko{font-family:'Noto Serif KR',serif;font-size:clamp(20px,3vw,36px);font-weight:600;color:var(--ink);margin-bottom:6px;}
+.hero-pos{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:22px;}
+.hero-divider{width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));margin-bottom:22px;border-radius:2px;}
+.hero-bio{font-size:14px;color:var(--gray);line-height:1.9;max-width:420px;margin-bottom:26px;font-family:'Noto Serif KR',serif;font-weight:300;}
+.hero-spec{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:34px;}
+.hero-spec span{padding:4px 13px;border:1px solid var(--gold);border-radius:20px;font-size:11px;color:var(--ink2);font-weight:500;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{padding:12px 28px;background:var(--ink2);color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;transition:background .2s;font-family:'Noto Sans KR',sans-serif;}
+.btn-p:hover{background:var(--gold);}
+.btn-o{padding:12px 28px;background:transparent;color:var(--ink2);border:1.5px solid var(--ink2);border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;font-family:'Noto Sans KR',sans-serif;}
+.btn-o:hover{background:var(--ink2);color:#fff;}
+.hero-right{position:relative;background:var(--ink2);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(201,168,76,.2) 0%,transparent 70%),linear-gradient(160deg,#2d3561 0%,#1a1a2e 100%);}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px);}
+.hero-card{position:relative;z-index:2;padding:40px 32px;text-align:center;width:100%;max-width:320px;}
+.hero-avatar{width:130px;height:130px;border-radius:50%;border:3px solid var(--gold);overflow:hidden;margin:0 auto 20px;box-shadow:0 0 0 8px rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.hero-card h3{font-family:'DM Serif Display',serif;font-size:21px;color:#fff;margin-bottom:3px;}
+.hero-card .ctitle{font-size:11px;color:var(--gold2);letter-spacing:1px;margin-bottom:20px;}
+.hinfo-rows{text-align:left;display:flex;flex-direction:column;gap:9px;}
+.hinfo-row{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:rgba(255,255,255,.8);}
+.hinfo-row .ic{color:var(--gold);flex-shrink:0;margin-top:1px;}
+#award-strip{background:var(--ink2);padding:16px 5%;display:flex;gap:0;overflow-x:auto;border-top:1px solid rgba(255,255,255,.08);}
+.award-item{flex-shrink:0;padding:0 22px;border-right:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:2px;}
+.award-item:last-child{border:none;}
+.award-year{font-size:10px;color:var(--gold2);font-weight:700;letter-spacing:1px;}
+.award-name{font-size:11px;color:rgba(255,255,255,.8);white-space:nowrap;}
+section{padding:86px 8%;}
+.sec-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--gold);opacity:.35;max-width:50px;}
+.sec-title{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.2vw,38px);color:var(--ink2);margin-bottom:12px;line-height:1.15;}
+.sec-sub{font-size:14px;color:var(--gray);font-family:'Noto Serif KR',serif;font-weight:300;max-width:520px;line-height:1.85;margin-bottom:44px;}
+#about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.about-text p{font-size:14px;color:#444;line-height:1.95;font-family:'Noto Serif KR',serif;font-weight:300;margin-bottom:12px;}
+.edu-list{list-style:none;}
+.edu-item{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);}
+.edu-item:last-child{border:none;}
+.edu-year{font-size:11px;font-weight:700;color:var(--gold);white-space:nowrap;min-width:76px;margin-top:2px;}
+.edu-info strong{font-size:13px;color:var(--ink2);display:block;margin-bottom:1px;}
+.edu-info span{font-size:11px;color:var(--gray);}
+.thesis-box{background:var(--cream);border-radius:10px;padding:16px 18px;margin-top:14px;}
+.thesis-box .tb-label{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1.5px;margin-bottom:10px;}
+.thesis-item{font-size:12px;color:#555;line-height:1.6;padding:6px 0;border-bottom:1px dashed #ddd;}
+.thesis-item:last-child{border:none;}
+.thesis-item strong{color:var(--ink2);}
+#positions{background:var(--cream);}
+.pos-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.pos-col-title{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--gold);}
+.pos-list{display:flex;flex-direction:column;gap:5px;}
+.pos-item{display:flex;align-items:flex-start;gap:10px;font-size:12px;padding:8px 12px;border-radius:7px;line-height:1.5;}
+.pos-item.cur{background:rgba(201,168,76,.1);border-left:3px solid var(--gold);color:#333;}
+.pos-item.past{background:var(--white);border:1px solid var(--line);color:#555;}
+.pos-item .ptext strong{display:block;font-size:12px;color:var(--ink2);}
+.pos-item .ptext span{font-size:11px;color:var(--gray);}
+#career{background:var(--white);}
+.ctabs{display:flex;gap:0;margin-bottom:30px;border-bottom:2px solid var(--line);}
+.ctab{padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:none;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-2px;font-family:'Noto Sans KR',sans-serif;transition:color .2s;}
+.ctab.active{color:var(--ink2);border-bottom-color:var(--gold);}
+.ctab-panel{display:none;}
+.ctab-panel.active{display:block;}
+.career-table{width:100%;border-collapse:collapse;font-size:12px;}
+.career-table th{background:var(--ink2);color:#fff;padding:9px 13px;text-align:left;font-weight:700;font-size:11px;letter-spacing:.3px;}
+.career-table td{padding:9px 13px;border-bottom:1px solid var(--line);color:#444;line-height:1.5;vertical-align:top;}
+.career-table tr:hover td{background:var(--cream);}
+.career-table td:first-child{color:var(--gold);font-weight:700;white-space:nowrap;}
+#publications{background:var(--cream);}
+.ptabs{display:flex;gap:0;margin-bottom:28px;border-bottom:2px solid var(--line);}
+.ptab{padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:none;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-2px;font-family:'Noto Sans KR',sans-serif;transition:color .2s;}
+.ptab.active{color:var(--ink2);border-bottom-color:var(--gold);}
+.pub-panel{display:none;}
+.pub-panel.active{display:flex;flex-direction:column;}
+.pub-item{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);}
+.pub-item:last-child{border:none;}
+.pub-yr{font-size:11px;font-weight:700;color:var(--gold);background:rgba(201,168,76,.1);border-radius:4px;padding:3px 7px;white-space:nowrap;height:fit-content;margin-top:2px;}
+.pub-body .pt{font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:3px;line-height:1.5;}
+.pub-body .pm{font-size:11px;color:var(--gray);}
+.pub-badge{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:5px;vertical-align:middle;}
+.bg-kci{background:#e8f5e9;color:#2e7d32;}
+.bg-int{background:#e3f2fd;color:#1565c0;}
+#awards{background:var(--white);}
+.award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.award-card{background:var(--cream);border-radius:10px;padding:18px 16px;border-left:4px solid var(--gold);}
+.award-card .aw-date{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:5px;}
+.award-card .aw-name{font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:3px;line-height:1.4;}
+.award-card .aw-by{font-size:11px;color:var(--gray);}
+#contact{background:var(--ink2);}
+#contact .sec-label{color:var(--gold2);}
+#contact .sec-label::after{background:var(--gold2);}
+#contact .sec-title{color:#fff;}
+#contact .sec-sub{color:rgba(255,255,255,.6);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+.cinfo-list{display:flex;flex-direction:column;gap:11px;}
+.cinfo-row{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.07);border-radius:10px;padding:13px 15px;}
+.cinfo-icon{width:34px;height:34px;border-radius:7px;background:rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.cinfo-label{font-size:10px;color:var(--gold2);font-weight:700;letter-spacing:.5px;margin-bottom:2px;}
+.cinfo-val{font-size:13px;color:rgba(255,255,255,.9);font-weight:500;line-height:1.5;}
+.msg-box{background:rgba(255,255,255,.07);border-radius:12px;padding:26px 22px;}
+.msg-box h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:14px;}
+.msg-box input,.msg-box textarea{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:9px 13px;font-size:12px;color:#fff;font-family:'Noto Sans KR',sans-serif;outline:none;box-sizing:border-box;margin-bottom:9px;}
+.msg-box input::placeholder,.msg-box textarea::placeholder{color:rgba(255,255,255,.35);}
+.msg-box textarea{resize:none;min-height:80px;line-height:1.6;}
+.msg-box button{width:100%;height:42px;background:var(--gold);color:var(--ink);border:none;border-radius:7px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:24px;font-size:11px;line-height:1.9;}
+footer strong{color:rgba(255,255,255,.7);}
+@media(max-width:820px){
+  #hero{grid-template-columns:1fr;}
+  .hero-right{min-height:240px;}
+  .hero-left{padding:52px 6%;}
+  .about-grid,.pos-grid,.contact-grid{grid-template-columns:1fr;gap:28px;}
+  .nav-links{display:none;}
+  .nav-toggle{display:block;}
+  section{padding:60px 6%;}
+  #award-strip{padding:14px 5%;}
+  .career-table{font-size:11px;}
+  .career-table td,.career-table th{padding:7px 10px;}
+}
+
+/* ── 언어 토글 ── */
+.lang-toggle{display:flex;background:rgba(26,26,46,0.08);border-radius:20px;padding:3px;gap:2px;margin-left:12px;}
+.lang-btn{padding:4px 12px;border:none;background:transparent;font-size:12px;font-weight:700;cursor:pointer;border-radius:16px;color:var(--gray);font-family:'Noto Sans KR',sans-serif;transition:all .2s;}
+.lang-btn.active{background:var(--ink2);color:#fff;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Park<span>.</span>JK</div>
+  <ul class="nav-links">
+    <li><a href="#about" data-ko="소개" data-en="About">소개</a></li>
+    <li><a href="#positions" data-ko="직위" data-en="Positions">직위</a></li>
+    <li><a href="#career" data-ko="경력" data-en="Career">경력</a></li>
+    <li><a href="#publications" data-ko="논문" data-en="Publications">논문</a></li>
+    <li><a href="#awards" data-ko="수상" data-en="Awards">수상</a></li>
+    <li><a href="#contact" data-ko="연락처" data-en="Contact">연락처</a></li>
+  </ul>
+  <div class="lang-toggle"><button class="lang-btn active" onclick="setLang('ko')">한국어</button><button class="lang-btn" onclick="setLang('en')">EN</button></div><button class="nav-toggle" onclick="toggleNav()">☰</button>
+</nav>
+
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-dept" data-ko="가톨릭관동대학교 · 스포츠레저학과" data-en="Catholic Kwandong University · Dept. of Sports &amp; Leisure">가톨릭관동대학교 · 스포츠레저학과</div>
+    <div class="hero-name">Prof. Park Jin Kyung</div>
+    <div class="hero-name-ko" data-ko="박 진 경 교수" data-en="Professor">박 진 경 교수</div>
+    <div class="hero-pos" data-ko="스포츠사회학 · 스포츠정책 · 디지털스포츠" data-en="Sociology of Sport · Sports Policy · Digital Sports">스포츠사회학 · 스포츠정책 · 디지털스포츠</div>
+    <div class="hero-divider"></div>
+    <p class="hero-bio" data-ko="서울대학교 교육학박사. 1995년부터 30여 년간 가톨릭관동대학교에 재직하며 스포츠사회학·스포츠정책·국제교류 분야의 연구와 교육에 헌신해 왔습니다. 문화체육관광부·국무총리실 등 정부 기관 위원으로 국가 스포츠 정책 발전에 기여하고 있습니다." data-en="Ph.D. in Education from Seoul National University. Over 30 years at Catholic Kwandong University, dedicated to research and education in sociology of sport, sports policy, and international exchange. Serves on advisory committees for the Ministry of Culture, Sports and Tourism and the Office of the Prime Minister.">서울대학교 교육학박사. 1995년부터 30여 년간 가톨릭관동대학교에 재직하며 스포츠사회학·스포츠정책·국제교류 분야의 연구와 교육에 헌신해 왔습니다. 문화체육관광부·국무총리실 등 정부 기관 위원으로 국가 스포츠 정책 발전에 기여하고 있습니다.</p>
+    <div class="hero-spec">
+      <span data-ko="스포츠사회학" data-en="Sociology of Sport">스포츠사회학</span><span data-ko="스포츠정책학" data-en="Sports Policy">스포츠정책학</span><span data-ko="디지털스포츠학" data-en="Digital Sports">디지털스포츠학</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#publications" class="btn-p" data-ko="연구 업적 보기" data-en="View Research">연구 업적 보기</a>
+      <a href="#contact" class="btn-o" data-ko="연락하기" data-en="Contact">연락하기</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-pattern"></div>
+    <div class="hero-card">
+      <div class="hero-avatar"><img src="data:image/jpeg;base64,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" alt="박진경 교수"></div>
+      <h3>Jinkyung Park</h3>
+      <p class="ctitle" data-ko="교수 · 스포츠레저학과" data-en="Professor · Sports &amp; Leisure Dept.">Professor · Sports &amp; Leisure Dept.</p>
+      <div class="hinfo-rows">
+        <div class="hinfo-row"><span class="ic">🏛</span><span>가톨릭관동대학교 스포츠레저학과</span></div>
+        <div class="hinfo-row"><span class="ic">🎓</span><span>서울대학교 대학원 교육학박사 (1994)</span></div>
+        <div class="hinfo-row"><span class="ic">📞</span><span>010-3234-6458 / 033-649-7722</span></div>
+        <div class="hinfo-row"><span class="ic">📧</span><span>pjkths@hanmail.net</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="award-strip">
+  <div class="award-item"><div class="award-year">2019</div><div class="award-name">🏅 체육포장 (대통령)</div></div>
+  <div class="award-item"><div class="award-year">2016</div><div class="award-name">🏅 여성가족부 장관 표창</div></div>
+  <div class="award-item"><div class="award-year">2011</div><div class="award-name">🏅 대한체육회 체육상 학술부문 우수상</div></div>
+  <div class="award-item"><div class="award-year">2010</div><div class="award-name">🏅 Hirell Ruskin Scholar Award · WLO</div></div>
+  <div class="award-item"><div class="award-year">2009</div><div class="award-name">🏅 문화체육관광부 장관 표창</div></div>
+  <div class="award-item"><div class="award-year">2002</div><div class="award-name">🏅 FIFA 한일월드컵 유공자 표창</div></div>
+</div>
+
+<section id="about">
+  <div class="sec-label">About</div>
+  <h2 class="sec-title" data-ko="교수 소개" data-en="About">교수 소개</h2>
+  <p class="sec-sub" data-ko="서울대학교 스포츠사회학 박사로, 30여 년간 스포츠 교육과 정책 연구에 헌신해 왔습니다." data-en="Ph.D. in Sociology of Sport from Seoul National University, devoted over 30 years to sport education and policy research.">서울대학교 스포츠사회학 박사로, 30여 년간 스포츠 교육과 정책 연구에 헌신해 왔습니다.</p>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>박진경 교수는 1980년 전남대학교 체육교육과에 입학하여 스포츠 교육의 길을 시작했습니다. 서울대학교 대학원에서 스포츠사회학을 전공하여 교육학석사(1986)와 교육학박사(1994)를 취득하였으며, 박사학위 논문 주제는 <em>"스포츠조직 구성원의 직무스트레스와 조직행동의 관계"</em>입니다.</p>
+      <p>1995년부터 현재까지 가톨릭관동대학교 스포츠레저학과 교수로 재직하며, 스포츠사회학·스포츠정책·스포츠국제교류협력 분야에서 100여 편 이상의 논문과 연구보고서를 발표하였습니다.</p>
+      <p>국무총리실·문화체육관광부·행정안전부·기획재정부 등 다수의 정부·공공기관에서 위원으로 활동하며 국가 스포츠 정책 수립과 2018 평창동계올림픽 유치 및 사후활용에 핵심적 역할을 담당하였습니다.</p>
+      <div class="thesis-box">
+        <div class="tb-label">📄 학위 논문</div>
+        <div class="thesis-item"><strong>석사 (1986.8)</strong> 스포츠조직내의 사회적 차별에 관한 Davis-Moore 이론의 검증</div>
+        <div class="thesis-item"><strong>박사 (1994.2)</strong> 스포츠조직 구성원의 직무스트레스와 조직행동의 관계</div>
+      </div>
+    </div>
+    <div>
+      <ul class="edu-list">
+        <li class="edu-item"><span class="edu-year">1980–1984</span><div class="edu-info"><strong>체육교육학 학사</strong><span>전남대학교 체육교육과</span></div></li>
+        <li class="edu-item"><span class="edu-year">1984–1986</span><div class="edu-info"><strong>교육학석사 (스포츠사회학)</strong><span>서울대학교 대학원 체육교육과</span></div></li>
+        <li class="edu-item"><span class="edu-year">1990–1994</span><div class="edu-info"><strong>교육학박사 (스포츠사회학)</strong><span>서울대학교 대학원 체육교육과</span></div></li>
+        <li class="edu-item"><span class="edu-year">1984. 2.</span><div class="edu-info"><strong>중등교원 2급 정교사 자격 취득</strong><span></span></div></li>
+        <li class="edu-item"><span class="edu-year">1995–현재</span><div class="edu-info"><strong>가톨릭관동대학교 스포츠레저학과 교수</strong><span>재직 30년 이상 (2026년 현재)</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="positions">
+  <div class="sec-label">Positions</div>
+  <h2 class="sec-title" data-ko="주요 직위" data-en="Key Positions">주요 직위</h2>
+  <p class="sec-sub" data-ko="현재 및 주요 역임 직위 목록입니다." data-en="Current and past key positions.">현재 및 주요 역임 직위 목록입니다.</p>
+  <div class="pos-grid reveal">
+    <div>
+      <div class="pos-col-title"><span data-ko="🔷 현 직위" data-en="🔷 Current Positions">🔷 현 직위</span></div>
+      <div class="pos-list">
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>문화체육관광부 국제대회유치심의위원회 위원</strong><span>2026~현재</span></div></div>
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>문화체육관광부 체육지도자운영위원회 위원</strong><span>2025~현재</span></div></div>
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>한국대학스포츠협의회 집행위원 · 부위원장</strong><span>2020~현재</span></div></div>
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>강원도체육학회 회장</strong><span>2013~현재</span></div></div>
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>가톨릭관동대학교 강릉체력인증센터 센터장</strong><span>2015~현재 (문체부·강릉시 위탁)</span></div></div>
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>강릉관광개발공사 DMO 운영위원회 운영위원</strong><span>2021~2024</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="pos-col-title" style="color:var(--ink2);border-bottom-color:var(--ink2);"><span data-ko="◾ 주요 역임 직위" data-en="◾ Past Positions">◾ 주요 역임 직위</span></div>
+      <div class="pos-list">
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>국민체육진흥공단 이사회 비상임이사</strong><span>2020~2023 / 2008~2009</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>국제방송교류재단 비상임이사 (아리랑TV)</strong><span>2020~2022</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>국무총리실 동계올림픽특구위원회 위원</strong><span>2020~2022</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>문화체육관광부 규제개혁심의위원회 체육위원장</strong><span>2020~2024</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>2018평창동계올림픽 조직위원회 자문위원</strong><span>2012~2018</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>한국스포츠사회학회 회장 / 명예회장</strong><span>2017~2018 / 2019~2020</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>한국체육학회 부회장</strong><span>2017~2018</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>기획재정부 공공기관선진화자문위원회 위원</strong><span>2008~2012</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>행정안전부 지자체합동평가위원회 위원</strong><span>2009, 2014~2016</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>가톨릭관동대학교 관광스포츠대학 학장</strong><span>2018~2019</span></div></div>
+        <div class="pos-item past"><span>▪</span><div class="ptext"><strong>KBS강릉방송국 시청자위원회 위원장</strong><span>2014~2017</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="sec-label">Career</div>
+  <h2 class="sec-title" data-ko="주요 경력" data-en="Career">주요 경력</h2>
+  <p class="sec-sub" data-ko="대학·정부·학계·지자체의 주요 경력입니다." data-en="Key career history across academia, government, and public institutions.">대학·정부·학계·지자체의 주요 경력입니다.</p>
+  <div class="ctabs reveal">
+    <button class="ctab active" onclick="switchC('univ',this)" data-ko="대학" data-en="University">대학</button>
+    <button class="ctab" onclick="switchC('gov',this)" data-ko="정부·공공" data-en="Government">정부·공공</button>
+    <button class="ctab" onclick="switchC('acad',this)" data-ko="학계" data-en="Academia">학계</button>
+    <button class="ctab" onclick="switchC('local',this)" data-ko="지자체·체육회" data-en="Local/Sports">지자체·체육회</button>
+  </div>
+  <div id="c-univ" class="ctab-panel active">
+    <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="소속" data-en="Institution">소속</th><th data-ko="부서 / 직위" data-en="Role">부서 / 직위</th></tr></thead><tbody>
+      <tr><td>1995~현재</td><td>가톨릭관동대학교</td><td>스포츠레저학과 교수</td></tr>
+      <tr><td>2018~2019</td><td>가톨릭관동대학교</td><td>관광스포츠대학 학장</td></tr>
+      <tr><td>2017~2018</td><td>가톨릭관동대학교</td><td>대외협력처 처장</td></tr>
+      <tr><td>2015~현재</td><td>가톨릭관동대학교</td><td>강릉체력인증센터 센터장 (문체부·강릉시 위탁)</td></tr>
+      <tr><td>2011~2026</td><td>가톨릭관동대학교</td><td>유소년스포츠지도사연수원 원장 (문화체육관광부 지정)</td></tr>
+      <tr><td>2011~2013</td><td>가톨릭관동대학교</td><td>스포츠예술대학 학장</td></tr>
+      <tr><td>2018~2020</td><td>가톨릭관동대학교</td><td>올림픽경기장인수단 단장</td></tr>
+    </tbody></table>
+  </div>
+  <div id="c-gov" class="ctab-panel">
+    <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="기관" data-en="Organization">기관</th><th data-ko="직위" data-en="Role">직위</th></tr></thead><tbody>
+      <tr><td>2026~현재</td><td>문화체육관광부</td><td>국제대회유치심의위원회 위원</td></tr>
+      <tr><td>2025~현재</td><td>문화체육관광부</td><td>체육지도자운영위원회 위원</td></tr>
+      <tr><td>2020~2024</td><td>문화체육관광부</td><td>규제개혁심의위원회 체육위원장</td></tr>
+      <tr><td>2020~2024</td><td>문화체육관광부</td><td>적극행정위원회 위원</td></tr>
+      <tr><td>2021~2024</td><td>국무총리실</td><td>동계올림픽특구위원회 위원</td></tr>
+      <tr><td>2020~2023</td><td>국민체육진흥공단</td><td>이사회 비상임이사</td></tr>
+      <tr><td>2020~2022</td><td>국제방송교류재단</td><td>비상임이사 (아리랑TV)</td></tr>
+      <tr><td>2018~2022</td><td>문화체육관광부</td><td>자체평가위원회 위원</td></tr>
+      <tr><td>2019~2021</td><td>문화체육관광부</td><td>체육지도자 행정처분심의위원회 위원</td></tr>
+      <tr><td>2019~2021</td><td>문화체육관광부</td><td>국제경기대회유치심사위원회 위원</td></tr>
+      <tr><td>2015~2019</td><td>문화체육관광부</td><td>청렴시민감사관 / 감사자문위원회 자문위원</td></tr>
+      <tr><td>2012~2018</td><td>2018평창동계올림픽 조직위원회</td><td>자문위원회 위원</td></tr>
+      <tr><td>2011~2013</td><td>2013충주세계조정선수권대회 조직위원회</td><td>위원</td></tr>
+      <tr><td>2008~2012</td><td>기획재정부</td><td>공공기관선진화자문위원회 위원</td></tr>
+      <tr><td>2008~2009</td><td>국민체육진흥공단</td><td>이사회 비상임이사</td></tr>
+      <tr><td>2014~2016</td><td>안전행정부</td><td>지자체합동평가위원회 위원</td></tr>
+      <tr><td>2014~2016</td><td>문화체육관광부</td><td>체육시설선정위원회 위원</td></tr>
+      <tr><td>2011~2013</td><td>문화체육관광부</td><td>정책평가위원회 체육분과위원장</td></tr>
+      <tr><td>2012~2013</td><td>사행사업통합감독위원회</td><td>한국도박문제관리센터설립위원회 위원</td></tr>
+      <tr><td>2011~2018</td><td>사행사업통합감독위원회</td><td>한국도박문제관리센터 강원센터 운영위원장</td></tr>
+    </tbody></table>
+  </div>
+  <div id="c-acad" class="ctab-panel">
+    <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="기관" data-en="Organization">기관</th><th data-ko="직위" data-en="Role">직위</th></tr></thead><tbody>
+      <tr><td>2013~현재</td><td>강원도체육학회</td><td>회장</td></tr>
+      <tr><td>2019~2020</td><td>한국스포츠사회학회</td><td>명예회장</td></tr>
+      <tr><td>2017~2018</td><td>한국스포츠사회학회</td><td>회장</td></tr>
+      <tr><td>2017~2018</td><td>한국체육학회</td><td>부회장</td></tr>
+      <tr><td>2020~현재</td><td>한국대학스포츠협의회</td><td>집행위원 · 부위원장</td></tr>
+      <tr><td>2020~2021</td><td>한국대학탁구연맹</td><td>회장</td></tr>
+      <tr><td>2011~2016</td><td>한국스포츠외교포럼</td><td>상임대표</td></tr>
+      <tr><td>2009~2010</td><td>한국체육단체총연합</td><td>사무총장</td></tr>
+      <tr><td>2000~2001</td><td>제1회 세계스포츠사회학학술대회 조직위원회</td><td>사무총장</td></tr>
+      <tr><td>1991~2010</td><td>한국체육학회</td><td>상임이사회 학술이사</td></tr>
+      <tr><td>1999~2016</td><td>한국스포츠사회학회</td><td>사무총장 · 부회장</td></tr>
+    </tbody></table>
+  </div>
+  <div id="c-local" class="ctab-panel">
+    <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="기관" data-en="Organization">기관</th><th data-ko="직위" data-en="Role">직위</th></tr></thead><tbody>
+      <tr><td>2021~2024</td><td>강릉관광개발공사</td><td>DMO 운영위원회 운영위원</td></tr>
+      <tr><td>2019~2022</td><td>강원도청</td><td>2018평창동계올림픽기념관 자문위원장</td></tr>
+      <tr><td>2015~2016</td><td>강원도청</td><td>행복한강원도위원회 부위원장 (기획행정분과위원장)</td></tr>
+      <tr><td>2019~2021</td><td>대한체육회</td><td>인권경영위원회 위원</td></tr>
+      <tr><td>2013~2016</td><td>대한체육회</td><td>체육발전위원회 · 미래전략위원회 위원</td></tr>
+      <tr><td>2015~2017</td><td>강원도에어로빅협회</td><td>회장</td></tr>
+      <tr><td>2012~2017</td><td>강원도크리켓협회</td><td>회장</td></tr>
+      <tr><td>2014~2017</td><td>KBS강릉방송국</td><td>시청자위원회 위원장</td></tr>
+      <tr><td>2011~2016</td><td>국민생활체육전국걷기연합회</td><td>부회장</td></tr>
+      <tr><td>2011~2016</td><td>국민생활체육강원도걷기연합회</td><td>회장</td></tr>
+      <tr><td>2011</td><td>KBO 한국야구위원회</td><td>프로야구30주년기념사업위원회 기념사업분과위원장</td></tr>
+      <tr><td>2001~2003</td><td>강원도청</td><td>2010평창동계올림픽유치위원회 위원</td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="sec-label">Publications</div>
+  <h2 class="sec-title" data-ko="논문 · 저서" data-en="Publications">논문 · 저서</h2>
+  <p class="sec-sub" data-ko="1989년부터 현재까지 발표된 주요 논문 및 연구보고서 목록입니다." data-en="Major papers and research reports published from 1989 to the present.">1989년부터 현재까지 발표된 주요 논문 및 연구보고서 목록입니다.</p>
+  <div class="ptabs reveal">
+    <button class="ptab active" onclick="switchP('recent',this)" data-ko="최근 (2019–2025)" data-en="Recent (2019–2025)">최근 (2019–2025)</button>
+    <button class="ptab" onclick="switchP('intl',this)" data-ko="국제 논문" data-en="International">국제 논문</button>
+    <button class="ptab" onclick="switchP('policy',this)" data-ko="스포츠정책" data-en="Sports Policy">스포츠정책</button>
+    <button class="ptab" onclick="switchP('early',this)" data-ko="초기 연구 (–2018)" data-en="Early Works (–2018)">초기 연구 (–2018)</button>
+  </div>
+  <div id="pub-recent" class="pub-panel active">
+    <div class="pub-item"><span class="pub-yr">2025</span><div class="pub-body"><div class="pt">청소년의 다차원적 치어리딩 참여와 사회적 관계, 사회적 지지, 사회적 회복력의 관계<span class="pub-badge bg-kci">KCI</span></div><div class="pm">경윤정, 박진경, 김용두 · 한국스포츠사회학회지, 38(3), 1–23</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2025</span><div class="pub-body"><div class="pt">선무도 연구의 학문 지형과 발전 구조: 질적 메타분석을 통한 연대기·주제·방법론 분석<span class="pub-badge bg-kci">KCI</span></div><div class="pm">태혜신, 박진경, 김용두 · 사회사상과 문화, 28(2), 91–138</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2025</span><div class="pub-body"><div class="pt">선무도 움직임 체계의 무용창작 활용에 대한 해석학적 탐색<span class="pub-badge bg-kci">KCI</span></div><div class="pm">태혜신, 박진경 · 한국무용과학회지, 42(2), 125–143</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2025</span><div class="pub-body"><div class="pt">골프장의 서비스스케이프와 고객반응 및 행동의도의 관계<span class="pub-badge bg-kci">KCI</span></div><div class="pm">조원철, 박진경 · 한국스포츠사회학회지, 38(1), 1–17</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2025</span><div class="pub-body"><div class="pt">사회인야구대회 타이틀스폰서십 활동이 브랜드자산 및 기업이미지에 미치는 영향<span class="pub-badge bg-kci">KCI</span></div><div class="pm">김태형, 경윤정, 박진경 · 한국체육학회지, 64(1)</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2023</span><div class="pub-body"><div class="pt">테니스 참가자의 스포츠몰입과 운동지속행동의 관계<span class="pub-badge bg-kci">KCI</span></div><div class="pm">박진경, 김광만, 김진영 · 한국융합과학회지, 12(12)</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2022</span><div class="pub-body"><div class="pt">중국 여성 대중스포츠의 발전과정과 전망<span class="pub-badge bg-kci">KCI</span></div><div class="pm">박진경 · 한국융합과학회지, 11(12), 31–46</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2021</span><div class="pub-body"><div class="pt">Design and implementation of intelligent sports training system for college students' mental health education<span class="pub-badge bg-int">SSCI</span></div><div class="pm">Wang, T., &amp; Park, J.K. · Frontiers in Psychology, 12, 1–15</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2019</span><div class="pub-body"><div class="pt">The heritagization and institutionalization of an intangible cultural heritage: Taekkyeon, a traditional Korean martial art<span class="pub-badge bg-int">SSCI</span></div><div class="pm">Park, J.K., Tae, H.S., Kwon, S.Y., &amp; Ok, K. · The International Journal of the History of Sport, 35(15–16), 1555–1566</div></div></div>
+  </div>
+  <div id="pub-intl" class="pub-panel">
+    <div class="pub-item"><span class="pub-yr">2021</span><div class="pub-body"><div class="pt">Design and implementation of intelligent sports training system for college students' mental health education<span class="pub-badge bg-int">SSCI</span></div><div class="pm">Wang, T., &amp; Park, J.K. · Frontiers in Psychology, 12, 1–15</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2019</span><div class="pub-body"><div class="pt">The heritagization and institutionalization of an intangible cultural heritage: Taekkyeon<span class="pub-badge bg-int">SSCI</span></div><div class="pm">Park, J.K. et al. · The International Journal of the History of Sport, 35(15–16)</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2011</span><div class="pub-body"><div class="pt">The twenty years of the Korean Society for the Sociology of Sport: Legacies and tasks<span class="pub-badge bg-int">국제</span></div><div class="pm">Park, J.K. · International Journal of Human Movement Science, 5(2), 143–160</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2010</span><div class="pub-body"><div class="pt">Conceptualization of image of sport heroes among elementary school students<span class="pub-badge bg-int">국제</span></div><div class="pm">Park, J.K., &amp; Kim, J.H. · International Journal of Human Movement Science, 4(2), 113–126</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1999</span><div class="pub-body"><div class="pt">한국경제와 스포츠산업: 추이와 전망<span class="pub-badge bg-int">국제</span></div><div class="pm">박진경 · 일본 스포츠 사회학회지, 7, 7–12</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1997</span><div class="pub-body"><div class="pt">Familism and Korean female athletes<span class="pub-badge bg-int">국제</span></div><div class="pm">Park, J.K. · Sport: Social Problems and Social Movement</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1995</span><div class="pub-body"><div class="pt">Influence of sport participation on familism among Korean collegiate students<span class="pub-badge bg-int">국제</span></div><div class="pm">Park, J.K. · Sport in Space and Time</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1994</span><div class="pub-body"><div class="pt">Priorities of investment in mass sport in Korea<span class="pub-badge bg-int">국제</span></div><div class="pm">Park, J.K. · Journal of Sport Management, 8(1), 57–62</div></div></div>
+  </div>
+  <div id="pub-policy" class="pub-panel">
+    <div class="pub-item"><span class="pub-yr">2016</span><div class="pub-body"><div class="pt">학생선수 학습권보장제 정책불응 원인분석 및 개선방안</div><div class="pm">이용식, 박진경 외 · 한국체육정책학회지, 14(2), 13–36</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2015</span><div class="pub-body"><div class="pt">국민생활체육전국종목별연합회 발전을 위한 정책요소 및 우선순위</div><div class="pm">박진경, 김진영 · 한국사회체육학회지, 60</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2012</span><div class="pub-body"><div class="pt">지역체육발전을 위한 전국체육대회와 전국생활체육대축전의 통합운영방안</div><div class="pm">박진경 · 한국체육정책학회지, 10(4), 177–187</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2011</span><div class="pub-body"><div class="pt">학교체육발전을 위한 거버넌스 구축방안</div><div class="pm">박진경 · 한국체육정책학회지, 9(3), 85–97</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2011</span><div class="pub-body"><div class="pt">동계스포츠 국제경쟁력 강화를 위한 스포츠거버넌스 구축방안</div><div class="pm">박진경 · 한국체육정책학회지, 9(1), 55–73</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2009</span><div class="pub-body"><div class="pt">태권도의 사회적 변형과정과 발전 전망</div><div class="pm">박진경 · 한국사회체육학회지, 38, 109–116</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2008</span><div class="pub-body"><div class="pt">신정부스포츠정책의 비전과 과제</div><div class="pm">박진경 · 스포츠과학, 102, 2–12</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2008</span><div class="pub-body"><div class="pt">한국의 스포츠 외교역량 강화 정책 방안</div><div class="pm">김범식, 박진경 외 · 한국체육학회지, 47(5), 107–117</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2001</span><div class="pub-body"><div class="pt">2010 동계올림픽 시설 건설의 기본방향 및 사후활용 방안</div><div class="pm">박진경 · 한국스포츠사회학회지, 14(1)</div></div></div>
+  </div>
+  <div id="pub-early" class="pub-panel">
+    <div class="pub-item"><span class="pub-yr">2014</span><div class="pub-body"><div class="pt">2018 평창동계올림픽의 올림픽레거시와 경기장 시설 사후활용방안</div><div class="pm">태혜신, 박명숙, 박진경 · 한국체육학회지, 53(1), 357–372</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2007</span><div class="pub-body"><div class="pt">스포츠, 미디어, 권력: 변동과 저항의 패러독스</div><div class="pm">박진경 · 한국사회체육학회지, 30(2)</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2007</span><div class="pub-body"><div class="pt">스포츠 스타의 영웅적 특성과 팬십의 관계</div><div class="pm">박진경, 김준호 · 한국스포츠사회학회지, 20(1), 1–11</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2003</span><div class="pub-body"><div class="pt">청소년의 역할모형과 스포츠영웅</div><div class="pm">박진경 · 한국스포츠사회학회지, 16(1), 1–10</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2001</span><div class="pub-body"><div class="pt">정보화사회와 스포츠: 전망과 과제</div><div class="pm">박진경 · 한국체육학회지, 40(1), 17–42</div></div></div>
+    <div class="pub-item"><span class="pub-yr">2001</span><div class="pub-body"><div class="pt">21세기 스포츠산업의 발전전망</div><div class="pm">박진경, 김종, 박영옥, 정희윤 · 한국체육학회지, 40(1)</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1999</span><div class="pub-body"><div class="pt">여성 스포츠에 대한 사회적 수용과 성역할 정체의 관계</div><div class="pm">박진경 · 한국스포츠사회학회지, 11, 95–108</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1997</span><div class="pub-body"><div class="pt">노인의 몰입형 여가경험이 고독감 및 생활만족에 미치는 영향</div><div class="pm">박진경 · 한국스포츠사회학회지, 8</div></div></div>
+    <div class="pub-item"><span class="pub-yr">1989</span><div class="pub-body"><div class="pt">'86 서울 아시안게임 및 '88 서울 올림픽 한국 메달리스트의 사회환경변인에 관한 연구</div><div class="pm">박진경 · 한국체육과학연구원 연구논총</div></div></div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="sec-label">Awards</div>
+  <h2 class="sec-title" data-ko="수상 경력" data-en="Awards &amp; Honors">수상 경력</h2>
+  <p class="sec-sub" data-ko="국내외 학술·사회 공헌 분야 수상 이력입니다." data-en="Recognition for academic achievement and social contribution.">국내외 학술·사회 공헌 분야 수상 이력입니다.</p>
+  <div class="award-grid reveal">
+    <div class="award-card"><div class="aw-date">2026년 3월</div><div class="aw-name">🏅 한국무용과학회 우수논문상</div><div class="aw-by">한국무용과학회</div></div>
+    <div class="award-card"><div class="aw-date">2019년 9월</div><div class="aw-name">🏅 체육포장</div><div class="aw-by">대통령 문재인</div></div>
+    <div class="award-card"><div class="aw-date">2016년 5월</div><div class="aw-name">🏅 여성가족부 장관 표창</div><div class="aw-by">여성가족부 장관</div></div>
+    <div class="award-card"><div class="aw-date">2012년 8월</div><div class="aw-name">🏅 스포츠서울 고객감동 &amp; Power Korea 대상</div><div class="aw-by">스포츠서울</div></div>
+    <div class="award-card"><div class="aw-date">2012년 7월</div><div class="aw-name">🏅 대한민국 자랑스런 혁신인 (혁신교육부문)</div><div class="aw-by">스포츠조선</div></div>
+    <div class="award-card"><div class="aw-date">2011년 2월</div><div class="aw-name">🏅 대한체육회 체육상 학술부문 우수상</div><div class="aw-by">대한체육회장</div></div>
+    <div class="award-card"><div class="aw-date">2010년 9월</div><div class="aw-name">🏅 Hirell Ruskin Scholar Award</div><div class="aw-by">World Leisure Organization</div></div>
+    <div class="award-card"><div class="aw-date">2009년 12월</div><div class="aw-name">🏅 문화체육관광부 장관 표창</div><div class="aw-by">문화체육관광부 장관</div></div>
+    <div class="award-card"><div class="aw-date">2009년 12월</div><div class="aw-name">🏅 강릉시장 표창</div><div class="aw-by">강릉시장</div></div>
+    <div class="award-card"><div class="aw-date">2002년 12월</div><div class="aw-name">🏅 2002 FIFA 한일월드컵 유공자 표창</div><div class="aw-by">문화관광부 장관</div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-label">Contact</div>
+  <h2 class="sec-title" data-ko="연락처" data-en="Contact">연락처</h2>
+  <p class="sec-sub" data-ko="학생 상담, 공동 연구, 강의 관련 문의는 아래로 연락해 주세요." data-en="For student consultations, collaborative research, or course inquiries, please contact below.">학생 상담, 공동 연구, 강의 관련 문의는 아래로 연락해 주세요.</p>
+  <div class="contact-grid reveal">
+    <div class="cinfo-list">
+      <div class="cinfo-row"><div class="cinfo-icon">🏛</div><div><div class="cinfo-label" data-ko="소속" data-en="Affiliation">소속</div><div class="cinfo-val">가톨릭관동대학교 스포츠레저학과</div></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">📍</div><div><div class="cinfo-label" data-ko="직장 주소" data-en="Address">직장 주소</div><div class="cinfo-val">강원도 강릉시 내곡동 가톨릭관동대학교</div></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">📞</div><div><div class="cinfo-label" data-ko="연락처" data-en="Phone">연락처</div><div class="cinfo-val">📱 010-3234-6458<br>☎ 033-649-7722 (연구실)</div></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">📧</div><div><div class="cinfo-label" data-ko="이메일" data-en="Email">이메일</div><div class="cinfo-val">pjkths@hanmail.net</div></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">🎓</div><div><div class="cinfo-label" data-ko="전공 분야" data-en="Research Fields">전공 분야</div><div class="cinfo-val">스포츠사회학 · 스포츠정책 · 디지털스포츠</div></div></div>
+    </div>
+    <div class="msg-box">
+      <h3 data-ko="📬 빠른 메시지" data-en="📬 Send a Message">📬 빠른 메시지</h3>
+      <input type="text" placeholder="이름 또는 학번">
+      <input type="text" placeholder="이메일 또는 연락처">
+      <textarea placeholder="문의 내용을 입력하세요..."></textarea>
+      <button onclick="alert('메시지가 전송되었습니다.\n박진경 교수님께 전달됩니다.')">메시지 보내기</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong data-ko="박진경 교수" data-en="Prof. Park Jin Kyung">박진경 교수</strong> · <span data-ko="가톨릭관동대학교 스포츠레저학과" data-en="Dept. of Sports &amp; Leisure, Catholic Kwandong University">가톨릭관동대학교 스포츠레저학과</span><br>
+  강원도 강릉시 내곡동 · 📞 010-3234-6458 · 033-649-7722 · pjkths@hanmail.net<br>
+  © 2026 Park Jinkyung. All rights reserved.
+</footer>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+function switchC(id,btn){document.querySelectorAll('.ctab-panel').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.ctab').forEach(function(b){b.classList.remove('active');});document.getElementById('c-'+id).classList.add('active');btn.classList.add('active');}
+function switchP(id,btn){document.querySelectorAll('.pub-panel').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.ptab').forEach(function(b){b.classList.remove('active');});document.getElementById('pub-'+id).classList.add('active');btn.classList.add('active');}
+function toggleNav(){var l=document.querySelector('.nav-links');l.style.display=l.style.display==='flex'?'none':(l.style.cssText='display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:var(--cream);padding:20px 8%;gap:16px;border-bottom:1px solid var(--line);z-index:199;','flex');}
+</script>
+
+<script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').then(function(reg) {
+      console.log('SW 등록 성공:', reg.scope);
+    }).catch(function(err) {
+      console.log('SW 등록 실패:', err);
+    });
+  });
+}
+</script>
+
+<div id="pwaBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#1a1a2e;color:#fff;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <img src="data:image/png;base64,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" 
+         style="width:44px;height:44px;border-radius:10px;border:2px solid #c9a84c;" alt="">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#fff;">박진경 교수 홈페이지</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.6);">홈 화면에 추가하면 앱처럼 사용할 수 있어요</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;flex-shrink:0;">
+    <button onclick="installPWA()" style="background:#c9a84c;color:#1a1a2e;border:none;
+      border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;
+      font-family:'Noto Sans KR',sans-serif;">앱 추가</button>
+    <button onclick="document.getElementById('pwaBanner').style.display='none'"
+      style="background:rgba(255,255,255,0.15);color:#fff;border:none;
+      border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;">✕</button>
+  </div>
+</div>
+<script>
+var deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(function(){
+    var b = document.getElementById('pwaBanner');
+    if(b) b.style.display='flex';
+  }, 2000);
+});
+function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(r){
+      if(r.outcome==='accepted'){
+        document.getElementById('pwaBanner').style.display='none';
+      }
+      deferredPrompt=null;
+    });
+  } else {
+    // iOS 안내
+    alert('홈 화면에 추가하는 방법:\n\n📱 아이폰: 하단 공유 버튼(□↑) → "홈 화면에 추가"\n\n🤖 안드로이드: 주소창 오른쪽 메뉴(⋮) → "홈 화면에 추가"');
+  }
+}
+window.addEventListener('appinstalled', function() {
+  document.getElementById('pwaBanner').style.display='none';
+  deferredPrompt=null;
+});
+</script>
+
+
+<script>
+var currentLang = 'ko';
+function setLang(lang) {
+  currentLang = lang;
+  // 버튼 상태
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  var target = lang === 'ko' ? 0 : 1;
+  document.querySelectorAll('.lang-btn')[target].classList.add('active');
+  // html lang 속성
+  document.documentElement.lang = lang;
+  // 모든 data-ko/data-en 요소 교체
+  document.querySelectorAll('[data-ko][data-en]').forEach(function(el) {
+    var txt = lang === 'ko' ? el.getAttribute('data-ko') : el.getAttribute('data-en');
+    // innerHTML 사용 (& 엔티티 포함 가능)
+    el.innerHTML = txt;
+  });
+  // 섹션 라벨은 영문이므로 그대로 유지
+  // About text block
+  var aboutP1 = document.querySelector('#about .about-text');
+  if (aboutP1) {
+    var ps = aboutP1.querySelectorAll('p');
+    if (lang === 'en' && ps.length >= 3) {
+      ps[0].textContent = 'Prof. Park began her academic journey in physical education at Chonnam National University in 1980. She earned her M.Ed. (1986) and Ph.D. (1994) in Sociology of Sport from Seoul National University Graduate School, with her doctoral dissertation on the relationship between job stress and organizational behavior among sport organization members.';
+      ps[1].textContent = 'Since 1995, she has been a professor in the Department of Sports and Leisure at Catholic Kwandong University, publishing over 100 papers and research reports in sociology of sport, sports policy, and international sports exchange.';
+      ps[2].textContent = 'She has served on advisory committees for the Office of the Prime Minister, the Ministry of Culture, Sports and Tourism, the Ministry of the Interior and Safety, and the Ministry of Economy and Finance, playing a key role in shaping national sports policy and the 2018 PyeongChang Winter Olympics legacy.';
+    } else if (lang === 'ko') {
+      ps[0].textContent = '박진경 교수는 1980년 전남대학교 체육교육과에 입학하여 스포츠 교육의 길을 시작했습니다. 서울대학교 대학원에서 스포츠사회학을 전공하여 교육학석사(1986)와 교육학박사(1994)를 취득하였으며, 박사학위 논문 주제는 "스포츠조직 구성원의 직무스트레스와 조직행동의 관계"입니다.';
+      ps[1].textContent = '1995년부터 현재까지 가톨릭관동대학교 스포츠레저학과 교수로 재직하며, 스포츠사회학·스포츠정책·스포츠국제교류협력 분야에서 100여 편 이상의 논문과 연구보고서를 발표하였습니다.';
+      ps[2].textContent = '국무총리실·문화체육관광부·행정안전부·기획재정부 등 다수의 정부·공공기관에서 위원으로 활동하며 국가 스포츠 정책 수립과 2018 평창동계올림픽 유치 및 사후활용에 핵심적 역할을 담당하였습니다.';
+    }
+  }
+  // Thesis box
+  var thesisItems = document.querySelectorAll('.thesis-item');
+  if (thesisItems.length >= 2) {
+    if (lang === 'en') {
+      thesisItems[0].innerHTML = '<strong>M.Ed. (1986)</strong> Verification of the Davis-Moore Theory Regarding Social Stratification within Sports Organizations';
+      thesisItems[1].innerHTML = '<strong>Ph.D. (1994)</strong> The Relationship between Job Stress and Organizational Behavior among Sport Organization Members';
+    } else {
+      thesisItems[0].innerHTML = '<strong>석사 (1986.8)</strong> 스포츠조직내의 사회적 차별에 관한 Davis-Moore 이론의 검증';
+      thesisItems[1].innerHTML = '<strong>박사 (1994.2)</strong> 스포츠조직 구성원의 직무스트레스와 조직행동의 관계';
+    }
+  }
+  // Education list
+  var eduItems = document.querySelectorAll('.edu-item');
+  var eduData = {
+    ko: [
+      ['1980–1984','체육교육학 학사','전남대학교 체육교육과'],
+      ['1984–1986','교육학석사 (스포츠사회학)','서울대학교 대학원 체육교육과'],
+      ['1990–1994','교육학박사 (스포츠사회학)','서울대학교 대학원 체육교육과'],
+      ['1984. 2.','중등교원 2급 정교사 자격 취득',''],
+      ['1995–현재','가톨릭관동대학교 스포츠레저학과 교수','재직 30년 이상 (2026년 현재)'],
+    ],
+    en: [
+      ['1980–1984','B.Ed. in Physical Education','Chonnam National University'],
+      ['1984–1986','M.Ed. in Sociology of Sport','Seoul National University Graduate School'],
+      ['1990–1994','Ph.D. in Sociology of Sport','Seoul National University Graduate School'],
+      ['1984. 2.','Secondary School Teacher Certification (Grade 2)',''],
+      ['1995–Present','Professor, Dept. of Sports & Leisure','Catholic Kwandong University (30+ years)'],
+    ]
+  };
+  var data = eduData[lang];
+  eduItems.forEach(function(item, i) {
+    if (!data[i]) return;
+    var yr = item.querySelector('.edu-year');
+    var strong = item.querySelector('.edu-info strong');
+    var span = item.querySelector('.edu-info span');
+    if (yr) yr.textContent = data[i][0];
+    if (strong) strong.textContent = data[i][1];
+    if (span) span.textContent = data[i][2];
+  });
+}
+</script>
+
+</body>
+</html>

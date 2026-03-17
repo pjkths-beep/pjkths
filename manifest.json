@@ -1,0 +1,25 @@
+{
+  "name": "박진경 교수 | 가톨릭관동대학교",
+  "short_name": "박진경 교수",
+  "description": "가톨릭관동대학교 스포츠레저학과 박진경 교수 홈페이지",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
