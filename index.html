@@ -151,10 +151,40 @@ footer strong{color:rgba(255,255,255,.7);}
   .career-table td,.career-table th{padding:7px 10px;}
 }
 
-/* ── 언어 토글 ── */
+/* ── 교수과목 ── */
+#courses{background:var(--cream2);}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.course-group{background:var(--white);border-radius:12px;border:0.5px solid var(--line);overflow:hidden;}
+.course-group-header{padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:1px;color:#fff;}
+.course-group-header.ug{background:var(--ink2);}
+.course-group-header.ms{background:#2e7d32;}
+.course-group-header.phd{background:#6a1b9a;}
+.course-group-header.common{background:#c9a84c;color:var(--ink);}
+.course-list{list-style:none;padding:10px 0;}
+.course-item{padding:8px 18px;font-size:13px;color:#333;border-bottom:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
+.course-item:last-child{border:none;}
+.course-item .ci-ko{font-weight:500;color:var(--ink2);}
+.course-item .ci-en{font-size:11px;color:var(--gray);}
+
+
 .lang-toggle{display:flex;background:rgba(26,26,46,0.08);border-radius:20px;padding:3px;gap:2px;margin-left:12px;}
 .lang-btn{padding:4px 12px;border:none;background:transparent;font-size:12px;font-weight:700;cursor:pointer;border-radius:16px;color:var(--gray);font-family:'Noto Sans KR',sans-serif;transition:all .2s;}
 .lang-btn.active{background:var(--ink2);color:#fff;}
+/* ── 교수 과목 ── */
+#courses{background:var(--cream2);}
+.courses-wrap{display:flex;flex-direction:column;gap:20px;}
+.course-group{background:var(--white);border-radius:14px;overflow:hidden;border:0.5px solid var(--line);}
+.cg-header{padding:13px 20px;display:flex;align-items:center;}
+.cg-header.ug{background:linear-gradient(90deg,#1a1a2e,#2d3561);}
+.cg-header.ms{background:linear-gradient(90deg,#1b5e20,#2e7d32);}
+.cg-header.phd{background:linear-gradient(90deg,#880e4f,#ad1457);}
+.cg-header.common{background:linear-gradient(90deg,#4a148c,#6a1b9a);}
+.cg-badge{font-size:13px;font-weight:700;color:#fff;letter-spacing:.5px;}
+.course-cards{display:flex;flex-wrap:wrap;gap:10px;padding:16px 20px;}
+.course-chip{background:var(--cream);border:1px solid var(--line);border-radius:10px;
+  padding:10px 16px;display:flex;flex-direction:column;gap:3px;min-width:140px;}
+.cc-ko{font-size:13px;font-weight:700;color:var(--ink2);}
+.cc-en{font-size:11px;color:var(--gray);}
 </style>
 </head>
 <body>
@@ -166,6 +196,7 @@ footer strong{color:rgba(255,255,255,.7);}
     <li><a href="#career" data-ko="경력" data-en="Career">경력</a></li>
     <li><a href="#publications" data-ko="논문" data-en="Publications">논문</a></li>
     <li><a href="#awards" data-ko="수상" data-en="Awards">수상</a></li>
+    <li><a href="#courses" data-ko="교수과목" data-en="Courses">교수과목</a></li>
     <li><a href="#contact" data-ko="연락처" data-en="Contact">연락처</a></li>
   </ul>
   <div class="lang-toggle"><button class="lang-btn active" onclick="setLang('ko')">한국어</button><button class="lang-btn" onclick="setLang('en')">EN</button></div><button class="nav-toggle" onclick="toggleNav()">☰</button>
@@ -407,6 +438,125 @@ footer strong{color:rgba(255,255,255,.7);}
   </div>
 </section>
 
+<section id="courses">
+  <div class="sec-label">Courses</div>
+  <h2 class="sec-title" data-ko="교수 과목" data-en="Courses Taught">교수 과목</h2>
+  <p class="sec-sub" data-ko="학부 및 대학원 담당 과목입니다." data-en="Undergraduate and graduate courses taught.">학부 및 대학원 담당 과목입니다.</p>
+  <div class="courses-grid reveal">
+
+    <!-- 학부 -->
+    <div class="course-group">
+      <div class="course-group-header ug" data-ko="🎓 학부" data-en="🎓 Undergraduate">🎓 학부</div>
+      <ul class="course-list">
+        <li class="course-item"><span class="ci-ko">스포츠사회학</span><span class="ci-en">Sociology of Sport</span></li>
+        <li class="course-item"><span class="ci-ko">테니스</span><span class="ci-en">Tennis</span></li>
+        <li class="course-item"><span class="ci-ko">승마</span><span class="ci-en">Equestrian</span></li>
+        <li class="course-item"><span class="ci-ko">골프</span><span class="ci-en">Golf</span></li>
+        <li class="course-item"><span class="ci-ko">요트</span><span class="ci-en">Yachting</span></li>
+        <li class="course-item"><span class="ci-ko">스키</span><span class="ci-en">Ski</span></li>
+        <li class="course-item"><span class="ci-ko">피클볼</span><span class="ci-en">Pickleball</span></li>
+      </ul>
+    </div>
+
+    <!-- 석사 -->
+    <div class="course-group">
+      <div class="course-group-header ms" data-ko="📘 대학원 — 석사" data-en="📘 Graduate — Master's">📘 대학원 — 석사</div>
+      <ul class="course-list">
+        <li class="course-item"><span class="ci-ko">스포츠사회학연구</span><span class="ci-en">Studies in Sociology of Sport</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠와 사회문제연구</span><span class="ci-en">Sport and Social Issues</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠와 사회이론연구</span><span class="ci-en">Sport and Social Theory</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠관광연구</span><span class="ci-en">Sport Tourism Studies</span></li>
+      </ul>
+    </div>
+
+    <!-- 박사 -->
+    <div class="course-group">
+      <div class="course-group-header phd" data-ko="📗 대학원 — 박사" data-en="📗 Graduate — Doctoral">📗 대학원 — 박사</div>
+      <ul class="course-list">
+        <li class="course-item"><span class="ci-ko">스포츠사회학 특강</span><span class="ci-en">Advanced Topics in Sociology of Sport</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠정치경제학특강</span><span class="ci-en">Sport, Politics &amp; Economics</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠젠더특강</span><span class="ci-en">Gender and Sport</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠와 사회이론특강</span><span class="ci-en">Advanced Sport &amp; Social Theory</span></li>
+        <li class="course-item"><span class="ci-ko">스포츠미디어특강</span><span class="ci-en">Sport and Media Studies</span></li>
+      </ul>
+    </div>
+
+    <!-- 석박사공통 -->
+    <div class="course-group">
+      <div class="course-group-header common" data-ko="📙 석·박사 공통" data-en="📙 Master's &amp; Doctoral (Common)">📙 석·박사 공통</div>
+      <ul class="course-list">
+        <li class="course-item"><span class="ci-ko">체육학연구법</span><span class="ci-en">Research Methods in Kinesiology</span></li>
+        <li class="course-item"><span class="ci-ko">체육통계연구</span><span class="ci-en">Statistical Research in Sport Science</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="courses">
+  <div class="sec-label">Teaching</div>
+  <h2 class="sec-title" data-ko="교수 과목" data-en="Courses Taught">교수 과목</h2>
+  <p class="sec-sub" data-ko="학부 및 대학원 담당 과목입니다." data-en="Undergraduate and graduate courses.">학부 및 대학원 담당 과목입니다.</p>
+
+  <div class="courses-wrap reveal">
+
+    <!-- 학부 -->
+    <div class="course-group">
+      <div class="cg-header ug">
+        <span class="cg-badge" data-ko="학부" data-en="Undergraduate">학부</span>
+      </div>
+      <div class="course-cards">
+        <div class="course-chip"><span class="cc-ko">스포츠사회학</span><span class="cc-en">Sociology of Sport</span></div>
+        <div class="course-chip"><span class="cc-ko">테니스</span><span class="cc-en">Tennis</span></div>
+        <div class="course-chip"><span class="cc-ko">승마</span><span class="cc-en">Equestrian</span></div>
+        <div class="course-chip"><span class="cc-ko">골프</span><span class="cc-en">Golf</span></div>
+        <div class="course-chip"><span class="cc-ko">요트</span><span class="cc-en">Yachting</span></div>
+        <div class="course-chip"><span class="cc-ko">스키</span><span class="cc-en">Ski</span></div>
+        <div class="course-chip"><span class="cc-ko">피클볼</span><span class="cc-en">Pickleball</span></div>
+      </div>
+    </div>
+
+    <!-- 석사 -->
+    <div class="course-group">
+      <div class="cg-header ms">
+        <span class="cg-badge" data-ko="대학원 석사" data-en="Graduate (Master's)">대학원 석사</span>
+      </div>
+      <div class="course-cards">
+        <div class="course-chip"><span class="cc-ko">스포츠사회학연구</span><span class="cc-en">Research in Sociology of Sport</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠와 사회문제연구</span><span class="cc-en">Sport and Social Issues</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠와 사회이론연구</span><span class="cc-en">Sport and Social Theory</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠관광연구</span><span class="cc-en">Sport Tourism Studies</span></div>
+      </div>
+    </div>
+
+    <!-- 박사 -->
+    <div class="course-group">
+      <div class="cg-header phd">
+        <span class="cg-badge" data-ko="대학원 박사" data-en="Graduate (Doctoral)">대학원 박사</span>
+      </div>
+      <div class="course-cards">
+        <div class="course-chip"><span class="cc-ko">스포츠사회학 특강</span><span class="cc-en">Advanced Sociology of Sport</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠정치경제학특강</span><span class="cc-en">Advanced Sport Political Economy</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠젠더특강</span><span class="cc-en">Advanced Sport and Gender Studies</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠와 사회이론특강</span><span class="cc-en">Advanced Sport &amp; Social Theory</span></div>
+        <div class="course-chip"><span class="cc-ko">스포츠미디어특강</span><span class="cc-en">Advanced Sport Media Studies</span></div>
+      </div>
+    </div>
+
+    <!-- 석박사 공통 -->
+    <div class="course-group">
+      <div class="cg-header common">
+        <span class="cg-badge" data-ko="석·박사 공통과정" data-en="Master's &amp; Doctoral Common">석·박사 공통과정</span>
+      </div>
+      <div class="course-cards">
+        <div class="course-chip"><span class="cc-ko">체육학연구법</span><span class="cc-en">Research Methods in Physical Education</span></div>
+        <div class="course-chip"><span class="cc-ko">체육통계연구</span><span class="cc-en">Statistics in Physical Education Research</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="awards">
   <div class="sec-label">Awards</div>
   <h2 class="sec-title" data-ko="수상 경력" data-en="Awards &amp; Honors">수상 경력</h2>
@@ -468,7 +618,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').then(function(reg) {
       console.log('SW 등록 성공:', reg.scope);
     }).catch(function(err) {
-      console.log('SW 등록 실패:', err);
+      console.log('SW 등록 실패 (sw.js 없음):', err);
     });
   });
 }
@@ -597,6 +747,19 @@ function setLang(lang) {
     if (yr) yr.textContent = data[i][0];
     if (strong) strong.textContent = data[i][1];
     if (span) span.textContent = data[i][2];
+  });
+  // 교수 과목 카드 국문/영문 전환
+  document.querySelectorAll('.course-chip').forEach(function(chip) {
+    var ko = chip.querySelector('.cc-ko');
+    var en = chip.querySelector('.cc-en');
+    if (!ko || !en) return;
+    if (lang === 'en') {
+      ko.style.cssText = 'font-size:11px;color:var(--gray);font-weight:400;';
+      en.style.cssText = 'font-size:13px;font-weight:700;color:var(--ink2);';
+    } else {
+      ko.style.cssText = 'font-size:13px;font-weight:700;color:var(--ink2);';
+      en.style.cssText = 'font-size:11px;color:var(--gray);font-weight:400;';
+    }
   });
 }
 </script>
