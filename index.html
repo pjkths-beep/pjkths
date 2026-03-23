@@ -119,6 +119,8 @@ section{padding:86px 8%;}
 .award-card .aw-date{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:5px;}
 .award-card .aw-name{font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:3px;line-height:1.4;}
 .award-card .aw-by{font-size:11px;color:var(--gray);}
+.award-card .aw-en{font-size:11px;color:var(--gold);font-style:italic;margin-bottom:1px;}
+.career-table td .td-en{display:block;font-size:10px;color:var(--gold);font-style:italic;margin-top:2px;}
 #contact{background:var(--ink2);}
 #contact .sec-label{color:var(--gold2);}
 #contact .sec-label::after{background:var(--gold2);}
@@ -152,8 +154,8 @@ footer strong{color:rgba(255,255,255,.7);}
 }
 
 /* ── 교수과목 ── */
-#courses{background:var(--cream2);}
-.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+
+
 .course-group{background:var(--white);border-radius:12px;border:0.5px solid var(--line);overflow:hidden;}
 .course-group-header{padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:1px;color:#fff;}
 .course-group-header.ug{background:var(--ink2);}
@@ -278,6 +280,8 @@ footer strong{color:rgba(255,255,255,.7);}
     <div>
       <div class="pos-col-title"><span data-ko="🔷 현 직위" data-en="🔷 Current Positions">🔷 현 직위</span></div>
       <div class="pos-list">
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>강릉시 인사위원회 위원</strong><span>2026~현재</span></div></div>
+        <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>(사)한국전통무예총연맹 고문</strong><span>2026~현재</span></div></div>
         <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>문화체육관광부 국제대회유치심의위원회 위원</strong><span>2026~현재</span></div></div>
         <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>문화체육관광부 체육지도자운영위원회 위원</strong><span>2025~현재</span></div></div>
         <div class="pos-item cur"><span>▪</span><div class="ptext"><strong>한국대학스포츠협의회 집행위원 · 부위원장</strong><span>2020~현재</span></div></div>
@@ -317,68 +321,68 @@ footer strong{color:rgba(255,255,255,.7);}
   </div>
   <div id="c-univ" class="ctab-panel active">
     <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="소속" data-en="Institution">소속</th><th data-ko="부서 / 직위" data-en="Role">부서 / 직위</th></tr></thead><tbody>
-      <tr><td>1995~현재</td><td>가톨릭관동대학교</td><td>스포츠레저학과 교수</td></tr>
-      <tr><td>2018~2019</td><td>가톨릭관동대학교</td><td>관광스포츠대학 학장</td></tr>
-      <tr><td>2017~2018</td><td>가톨릭관동대학교</td><td>대외협력처 처장</td></tr>
-      <tr><td>2015~현재</td><td>가톨릭관동대학교</td><td>강릉체력인증센터 센터장 (문체부·강릉시 위탁)</td></tr>
-      <tr><td>2011~2026</td><td>가톨릭관동대학교</td><td>유소년스포츠지도사연수원 원장 (문화체육관광부 지정)</td></tr>
-      <tr><td>2011~2013</td><td>가톨릭관동대학교</td><td>스포츠예술대학 학장</td></tr>
-      <tr><td>2018~2020</td><td>가톨릭관동대학교</td><td>올림픽경기장인수단 단장</td></tr>
+      <tr><td>1995~현재</td><td>가톨릭관동대학교</td><td>스포츠레저학과 교수<span class="td-en">Professor, Dept. of Sports &amp; Leisure</span></td></tr>
+      <tr><td>2018~2019</td><td>가톨릭관동대학교</td><td>관광스포츠대학 학장<span class="td-en">Dean, College of Tourism &amp; Sports</span></td></tr>
+      <tr><td>2017~2018</td><td>가톨릭관동대학교</td><td>대외협력처 처장<span class="td-en">Director, External Affairs Office</span></td></tr>
+      <tr><td>2015~현재</td><td>가톨릭관동대학교</td><td>강릉체력인증센터 센터장 (문체부·강릉시 위탁)<span class="td-en">Director, Gangneung Fitness Certification Center</span></td></tr>
+      <tr><td>2011~2026</td><td>가톨릭관동대학교</td><td>유소년스포츠지도사연수원 원장<span class="td-en">Director, Youth Sports Training Institute (MCST designated)</span></td></tr>
+      <tr><td>2011~2013</td><td>가톨릭관동대학교</td><td>스포츠예술대학 학장<span class="td-en">Dean, College of Sports &amp; Arts</span></td></tr>
+      <tr><td>2018~2020</td><td>가톨릭관동대학교</td><td>올림픽경기장인수단 단장<span class="td-en">Head, Olympic Stadium Takeover Team</span></td></tr>
     </tbody></table>
   </div>
   <div id="c-gov" class="ctab-panel">
     <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="기관" data-en="Organization">기관</th><th data-ko="직위" data-en="Role">직위</th></tr></thead><tbody>
-      <tr><td>2026~현재</td><td>문화체육관광부</td><td>국제대회유치심의위원회 위원</td></tr>
-      <tr><td>2025~현재</td><td>문화체육관광부</td><td>체육지도자운영위원회 위원</td></tr>
-      <tr><td>2020~2024</td><td>문화체육관광부</td><td>규제개혁심의위원회 체육위원장</td></tr>
-      <tr><td>2020~2024</td><td>문화체육관광부</td><td>적극행정위원회 위원</td></tr>
-      <tr><td>2021~2024</td><td>국무총리실</td><td>동계올림픽특구위원회 위원</td></tr>
-      <tr><td>2020~2023</td><td>국민체육진흥공단</td><td>이사회 비상임이사</td></tr>
-      <tr><td>2020~2022</td><td>국제방송교류재단</td><td>비상임이사 (아리랑TV)</td></tr>
-      <tr><td>2018~2022</td><td>문화체육관광부</td><td>자체평가위원회 위원</td></tr>
-      <tr><td>2019~2021</td><td>문화체육관광부</td><td>체육지도자 행정처분심의위원회 위원</td></tr>
-      <tr><td>2019~2021</td><td>문화체육관광부</td><td>국제경기대회유치심사위원회 위원</td></tr>
-      <tr><td>2015~2019</td><td>문화체육관광부</td><td>청렴시민감사관 / 감사자문위원회 자문위원</td></tr>
-      <tr><td>2012~2018</td><td>2018평창동계올림픽 조직위원회</td><td>자문위원회 위원</td></tr>
+      <tr><td>2026~현재</td><td>문화체육관광부</td><td>국제대회유치심의위원회 위원<span class="td-en">Member, International Sports Event Bid Committee</span></td></tr>
+      <tr><td>2025~현재</td><td>문화체육관광부</td><td>체육지도자운영위원회 위원<span class="td-en">Member, Sports Instructor Management Committee</span></td></tr>
+      <tr><td>2020~2024</td><td>문화체육관광부</td><td>규제개혁심의위원회 체육위원장<span class="td-en">Chair (Sports), Regulatory Reform Committee</span></td></tr>
+      <tr><td>2020~2024</td><td>문화체육관광부</td><td>적극행정위원회 위원<span class="td-en">Member, Proactive Administration Committee</span></td></tr>
+      <tr><td>2021~2024</td><td>국무총리실</td><td>동계올림픽특구위원회 위원<span class="td-en">Member, Winter Olympics Special Zone Committee</span></td></tr>
+      <tr><td>2020~2023</td><td>국민체육진흥공단</td><td>이사회 비상임이사<span class="td-en">Non-executive Director, Board of Directors</span></td></tr>
+      <tr><td>2020~2022</td><td>국제방송교류재단</td><td>비상임이사 (아리랑TV)<span class="td-en">Non-executive Director, Arirang TV</span></td></tr>
+      <tr><td>2018~2022</td><td>문화체육관광부</td><td>자체평가위원회 위원<span class="td-en">Member, Internal Evaluation Committee</span></td></tr>
+      <tr><td>2019~2021</td><td>문화체육관광부</td><td>체육지도자 행정처분심의위원회 위원<span class="td-en">Member, Sports Instructor Disciplinary Committee</span></td></tr>
+      <tr><td>2019~2021</td><td>문화체육관광부</td><td>국제경기대회유치심사위원회 위원<span class="td-en">Member, International Games Bid Review Committee</span></td></tr>
+      <tr><td>2015~2019</td><td>문화체육관광부</td><td>청렴시민감사관 / 감사자문위원회 자문위원<span class="td-en">Citizen Inspector / Advisory Audit Committee</span></td></tr>
+      <tr><td>2012~2018</td><td>2018평창동계올림픽 조직위원회</td><td>자문위원회 위원<span class="td-en">Member, Advisory Committee</span></td></tr>
       <tr><td>2011~2013</td><td>2013충주세계조정선수권대회 조직위원회</td><td>위원</td></tr>
-      <tr><td>2008~2012</td><td>기획재정부</td><td>공공기관선진화자문위원회 위원</td></tr>
-      <tr><td>2008~2009</td><td>국민체육진흥공단</td><td>이사회 비상임이사</td></tr>
+      <tr><td>2008~2012</td><td>기획재정부</td><td>공공기관선진화자문위원회 위원<span class="td-en">Member, Advisory Committee</span></td></tr>
+      <tr><td>2008~2009</td><td>국민체육진흥공단</td><td>이사회 비상임이사<span class="td-en">Non-executive Director, Board of Directors</span></td></tr>
       <tr><td>2014~2016</td><td>안전행정부</td><td>지자체합동평가위원회 위원</td></tr>
       <tr><td>2014~2016</td><td>문화체육관광부</td><td>체육시설선정위원회 위원</td></tr>
-      <tr><td>2011~2013</td><td>문화체육관광부</td><td>정책평가위원회 체육분과위원장</td></tr>
+      <tr><td>2011~2013</td><td>문화체육관광부</td><td>정책평가위원회 체육분과위원장<span class="td-en">Chair (Sports), Policy Evaluation Committee</span></td></tr>
       <tr><td>2012~2013</td><td>사행사업통합감독위원회</td><td>한국도박문제관리센터설립위원회 위원</td></tr>
-      <tr><td>2011~2018</td><td>사행사업통합감독위원회</td><td>한국도박문제관리센터 강원센터 운영위원장</td></tr>
+      <tr><td>2011~2018</td><td>사행사업통합감독위원회</td><td>한국도박문제관리센터 강원센터 운영위원장<span class="td-en">Chair, Gangwon Center for Gambling Problem Management</span></td></tr>
     </tbody></table>
   </div>
   <div id="c-acad" class="ctab-panel">
     <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="기관" data-en="Organization">기관</th><th data-ko="직위" data-en="Role">직위</th></tr></thead><tbody>
       <tr><td>2013~현재</td><td>강원도체육학회</td><td>회장</td></tr>
-      <tr><td>2019~2020</td><td>한국스포츠사회학회</td><td>명예회장</td></tr>
+      <tr><td>2019~2020</td><td>한국스포츠사회학회</td><td>명예회장<span class="td-en">Honorary President</span></td></tr>
       <tr><td>2017~2018</td><td>한국스포츠사회학회</td><td>회장</td></tr>
       <tr><td>2017~2018</td><td>한국체육학회</td><td>부회장</td></tr>
-      <tr><td>2020~현재</td><td>한국대학스포츠협의회</td><td>집행위원 · 부위원장</td></tr>
+      <tr><td>2020~현재</td><td>한국대학스포츠협의회</td><td>집행위원 · 부위원장<span class="td-en">Executive Member &amp; Vice Chair</span></td></tr>
       <tr><td>2020~2021</td><td>한국대학탁구연맹</td><td>회장</td></tr>
       <tr><td>2011~2016</td><td>한국스포츠외교포럼</td><td>상임대표</td></tr>
       <tr><td>2009~2010</td><td>한국체육단체총연합</td><td>사무총장</td></tr>
       <tr><td>2000~2001</td><td>제1회 세계스포츠사회학학술대회 조직위원회</td><td>사무총장</td></tr>
       <tr><td>1991~2010</td><td>한국체육학회</td><td>상임이사회 학술이사</td></tr>
-      <tr><td>1999~2016</td><td>한국스포츠사회학회</td><td>사무총장 · 부회장</td></tr>
+      <tr><td>1999~2016</td><td>한국스포츠사회학회</td><td>사무총장 · 부회장<span class="td-en">Secretary-General &amp; Vice President</span></td></tr>
     </tbody></table>
   </div>
   <div id="c-local" class="ctab-panel">
     <table class="career-table"><thead><tr><th data-ko="기간" data-en="Period">기간</th><th data-ko="기관" data-en="Organization">기관</th><th data-ko="직위" data-en="Role">직위</th></tr></thead><tbody>
-      <tr><td>2021~2024</td><td>강릉관광개발공사</td><td>DMO 운영위원회 운영위원</td></tr>
-      <tr><td>2019~2022</td><td>강원도청</td><td>2018평창동계올림픽기념관 자문위원장</td></tr>
-      <tr><td>2015~2016</td><td>강원도청</td><td>행복한강원도위원회 부위원장 (기획행정분과위원장)</td></tr>
+      <tr><td>2021~2024</td><td>강릉관광개발공사</td><td>DMO 운영위원회 운영위원<span class="td-en">Member, DMO Operating Committee</span></td></tr>
+      <tr><td>2019~2022</td><td>강원도청</td><td>2018평창동계올림픽기념관 자문위원장<span class="td-en">Chair, 2018 PyeongChang Olympic Memorial Advisory Committee</span></td></tr>
+      <tr><td>2015~2016</td><td>강원도청</td><td>행복한강원도위원회 부위원장<span class="td-en">Vice Chair, Happy Gangwon Committee</span></td></tr>
       <tr><td>2019~2021</td><td>대한체육회</td><td>인권경영위원회 위원</td></tr>
-      <tr><td>2013~2016</td><td>대한체육회</td><td>체육발전위원회 · 미래전략위원회 위원</td></tr>
+      <tr><td>2013~2016</td><td>대한체육회</td><td>체육발전위원회 · 미래전략위원회 위원<span class="td-en">Member, Sports Development &amp; Future Strategy Committees</span></td></tr>
       <tr><td>2015~2017</td><td>강원도에어로빅협회</td><td>회장</td></tr>
       <tr><td>2012~2017</td><td>강원도크리켓협회</td><td>회장</td></tr>
-      <tr><td>2014~2017</td><td>KBS강릉방송국</td><td>시청자위원회 위원장</td></tr>
+      <tr><td>2014~2017</td><td>KBS강릉방송국</td><td>시청자위원회 위원장<span class="td-en">Chair, Viewer Advisory Committee</span></td></tr>
       <tr><td>2011~2016</td><td>국민생활체육전국걷기연합회</td><td>부회장</td></tr>
       <tr><td>2011~2016</td><td>국민생활체육강원도걷기연합회</td><td>회장</td></tr>
-      <tr><td>2011</td><td>KBO 한국야구위원회</td><td>프로야구30주년기념사업위원회 기념사업분과위원장</td></tr>
-      <tr><td>2001~2003</td><td>강원도청</td><td>2010평창동계올림픽유치위원회 위원</td></tr>
+      <tr><td>2011</td><td>KBO 한국야구위원회</td><td>프로야구30주년기념사업위원회 기념사업분과위원장<span class="td-en">Chair, KBO 30th Anniversary Commemoration Committee</span></td></tr>
+      <tr><td>2001~2003</td><td>강원도청</td><td>2010평창동계올림픽유치위원회 위원<span class="td-en">Member, 2010 PyeongChang Winter Olympics Bid Committee</span></td></tr>
     </tbody></table>
   </div>
 </section>
@@ -438,89 +442,29 @@ footer strong{color:rgba(255,255,255,.7);}
   </div>
 </section>
 
-<section id="courses">
-  <div class="sec-label">Courses</div>
-  <h2 class="sec-title" data-ko="교수 과목" data-en="Courses Taught">교수 과목</h2>
-  <p class="sec-sub" data-ko="학부 및 대학원 담당 과목입니다." data-en="Undergraduate and graduate courses taught.">학부 및 대학원 담당 과목입니다.</p>
-  <div class="courses-grid reveal">
 
-    <!-- 학부 -->
-    <div class="course-group">
-      <div class="course-group-header ug" data-ko="🎓 학부" data-en="🎓 Undergraduate">🎓 학부</div>
-      <ul class="course-list">
-        <li class="course-item"><span class="ci-ko">스포츠사회학</span><span class="ci-en">Sociology of Sport</span></li>
-        <li class="course-item"><span class="ci-ko">테니스</span><span class="ci-en">Tennis</span></li>
-        <li class="course-item"><span class="ci-ko">승마</span><span class="ci-en">Equestrian</span></li>
-        <li class="course-item"><span class="ci-ko">골프</span><span class="ci-en">Golf</span></li>
-        <li class="course-item"><span class="ci-ko">요트</span><span class="ci-en">Yachting</span></li>
-        <li class="course-item"><span class="ci-ko">스키</span><span class="ci-en">Ski</span></li>
-        <li class="course-item"><span class="ci-ko">피클볼</span><span class="ci-en">Pickleball</span></li>
-      </ul>
-    </div>
-
-    <!-- 석사 -->
-    <div class="course-group">
-      <div class="course-group-header ms" data-ko="📘 대학원 — 석사" data-en="📘 Graduate — Master's">📘 대학원 — 석사</div>
-      <ul class="course-list">
-        <li class="course-item"><span class="ci-ko">스포츠사회학연구</span><span class="ci-en">Studies in Sociology of Sport</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠와 사회문제연구</span><span class="ci-en">Sport and Social Issues</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠와 사회이론연구</span><span class="ci-en">Sport and Social Theory</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠관광연구</span><span class="ci-en">Sport Tourism Studies</span></li>
-      </ul>
-    </div>
-
-    <!-- 박사 -->
-    <div class="course-group">
-      <div class="course-group-header phd" data-ko="📗 대학원 — 박사" data-en="📗 Graduate — Doctoral">📗 대학원 — 박사</div>
-      <ul class="course-list">
-        <li class="course-item"><span class="ci-ko">스포츠사회학 특강</span><span class="ci-en">Advanced Topics in Sociology of Sport</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠정치경제학특강</span><span class="ci-en">Sport, Politics &amp; Economics</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠젠더특강</span><span class="ci-en">Gender and Sport</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠와 사회이론특강</span><span class="ci-en">Advanced Sport &amp; Social Theory</span></li>
-        <li class="course-item"><span class="ci-ko">스포츠미디어특강</span><span class="ci-en">Sport and Media Studies</span></li>
-      </ul>
-    </div>
-
-    <!-- 석박사공통 -->
-    <div class="course-group">
-      <div class="course-group-header common" data-ko="📙 석·박사 공통" data-en="📙 Master's &amp; Doctoral (Common)">📙 석·박사 공통</div>
-      <ul class="course-list">
-        <li class="course-item"><span class="ci-ko">체육학연구법</span><span class="ci-en">Research Methods in Kinesiology</span></li>
-        <li class="course-item"><span class="ci-ko">체육통계연구</span><span class="ci-en">Statistical Research in Sport Science</span></li>
-      </ul>
-    </div>
-
-  </div>
-</section>
 
 <section id="courses">
   <div class="sec-label">Teaching</div>
   <h2 class="sec-title" data-ko="교수 과목" data-en="Courses Taught">교수 과목</h2>
   <p class="sec-sub" data-ko="학부 및 대학원 담당 과목입니다." data-en="Undergraduate and graduate courses.">학부 및 대학원 담당 과목입니다.</p>
-
   <div class="courses-wrap reveal">
 
-    <!-- 학부 -->
     <div class="course-group">
-      <div class="cg-header ug">
-        <span class="cg-badge" data-ko="학부" data-en="Undergraduate">학부</span>
-      </div>
+      <div class="cg-header ug"><span class="cg-badge" data-ko="학부" data-en="Undergraduate">학부</span></div>
       <div class="course-cards">
         <div class="course-chip"><span class="cc-ko">스포츠사회학</span><span class="cc-en">Sociology of Sport</span></div>
         <div class="course-chip"><span class="cc-ko">테니스</span><span class="cc-en">Tennis</span></div>
         <div class="course-chip"><span class="cc-ko">승마</span><span class="cc-en">Equestrian</span></div>
         <div class="course-chip"><span class="cc-ko">골프</span><span class="cc-en">Golf</span></div>
-        <div class="course-chip"><span class="cc-ko">요트</span><span class="cc-en">Yachting</span></div>
+        <div class="course-chip"><span class="cc-ko">요트</span><span class="cc-en">Sailing</span></div>
         <div class="course-chip"><span class="cc-ko">스키</span><span class="cc-en">Ski</span></div>
         <div class="course-chip"><span class="cc-ko">피클볼</span><span class="cc-en">Pickleball</span></div>
       </div>
     </div>
 
-    <!-- 석사 -->
     <div class="course-group">
-      <div class="cg-header ms">
-        <span class="cg-badge" data-ko="대학원 석사" data-en="Graduate (Master's)">대학원 석사</span>
-      </div>
+      <div class="cg-header ms"><span class="cg-badge" data-ko="대학원 석사" data-en="Graduate (Master's)">대학원 석사</span></div>
       <div class="course-cards">
         <div class="course-chip"><span class="cc-ko">스포츠사회학연구</span><span class="cc-en">Research in Sociology of Sport</span></div>
         <div class="course-chip"><span class="cc-ko">스포츠와 사회문제연구</span><span class="cc-en">Sport and Social Issues</span></div>
@@ -529,11 +473,8 @@ footer strong{color:rgba(255,255,255,.7);}
       </div>
     </div>
 
-    <!-- 박사 -->
     <div class="course-group">
-      <div class="cg-header phd">
-        <span class="cg-badge" data-ko="대학원 박사" data-en="Graduate (Doctoral)">대학원 박사</span>
-      </div>
+      <div class="cg-header phd"><span class="cg-badge" data-ko="대학원 박사" data-en="Graduate (Doctoral)">대학원 박사</span></div>
       <div class="course-cards">
         <div class="course-chip"><span class="cc-ko">스포츠사회학 특강</span><span class="cc-en">Advanced Sociology of Sport</span></div>
         <div class="course-chip"><span class="cc-ko">스포츠정치경제학특강</span><span class="cc-en">Advanced Sport Political Economy</span></div>
@@ -543,11 +484,8 @@ footer strong{color:rgba(255,255,255,.7);}
       </div>
     </div>
 
-    <!-- 석박사 공통 -->
     <div class="course-group">
-      <div class="cg-header common">
-        <span class="cg-badge" data-ko="석·박사 공통과정" data-en="Master's &amp; Doctoral Common">석·박사 공통과정</span>
-      </div>
+      <div class="cg-header common"><span class="cg-badge" data-ko="석·박사 공통과정" data-en="Master's &amp; Doctoral Common">석·박사 공통과정</span></div>
       <div class="course-cards">
         <div class="course-chip"><span class="cc-ko">체육학연구법</span><span class="cc-en">Research Methods in Physical Education</span></div>
         <div class="course-chip"><span class="cc-ko">체육통계연구</span><span class="cc-en">Statistics in Physical Education Research</span></div>
@@ -562,16 +500,16 @@ footer strong{color:rgba(255,255,255,.7);}
   <h2 class="sec-title" data-ko="수상 경력" data-en="Awards &amp; Honors">수상 경력</h2>
   <p class="sec-sub" data-ko="국내외 학술·사회 공헌 분야 수상 이력입니다." data-en="Recognition for academic achievement and social contribution.">국내외 학술·사회 공헌 분야 수상 이력입니다.</p>
   <div class="award-grid reveal">
-    <div class="award-card"><div class="aw-date">2026년 3월</div><div class="aw-name">🏅 한국무용과학회 우수논문상</div><div class="aw-by">한국무용과학회</div></div>
-    <div class="award-card"><div class="aw-date">2019년 9월</div><div class="aw-name">🏅 체육포장</div><div class="aw-by">대통령 문재인</div></div>
-    <div class="award-card"><div class="aw-date">2016년 5월</div><div class="aw-name">🏅 여성가족부 장관 표창</div><div class="aw-by">여성가족부 장관</div></div>
-    <div class="award-card"><div class="aw-date">2012년 8월</div><div class="aw-name">🏅 스포츠서울 고객감동 &amp; Power Korea 대상</div><div class="aw-by">스포츠서울</div></div>
-    <div class="award-card"><div class="aw-date">2012년 7월</div><div class="aw-name">🏅 대한민국 자랑스런 혁신인 (혁신교육부문)</div><div class="aw-by">스포츠조선</div></div>
-    <div class="award-card"><div class="aw-date">2011년 2월</div><div class="aw-name">🏅 대한체육회 체육상 학술부문 우수상</div><div class="aw-by">대한체육회장</div></div>
-    <div class="award-card"><div class="aw-date">2010년 9월</div><div class="aw-name">🏅 Hirell Ruskin Scholar Award</div><div class="aw-by">World Leisure Organization</div></div>
-    <div class="award-card"><div class="aw-date">2009년 12월</div><div class="aw-name">🏅 문화체육관광부 장관 표창</div><div class="aw-by">문화체육관광부 장관</div></div>
-    <div class="award-card"><div class="aw-date">2009년 12월</div><div class="aw-name">🏅 강릉시장 표창</div><div class="aw-by">강릉시장</div></div>
-    <div class="award-card"><div class="aw-date">2002년 12월</div><div class="aw-name">🏅 2002 FIFA 한일월드컵 유공자 표창</div><div class="aw-by">문화관광부 장관</div></div>
+    <div class="award-card"><div class="aw-date">2026년 3월</div><div class="aw-name">🏅 한국무용과학회 우수논문상</div><div class="aw-en">Outstanding Paper Award · Korean Society of Dance Science</div><div class="aw-by">한국무용과학회</div></div>
+    <div class="award-card"><div class="aw-date">2019년 9월</div><div class="aw-name">🏅 체육포장</div><div class="aw-en">Order of Sports Merit (Sports Medal) · President Moon Jae-in</div><div class="aw-by">대통령 문재인</div></div>
+    <div class="award-card"><div class="aw-date">2016년 5월</div><div class="aw-name">🏅 여성가족부 장관 표창</div><div class="aw-en">Commendation · Minister of Gender Equality and Family</div><div class="aw-by">여성가족부 장관</div></div>
+    <div class="award-card"><div class="aw-date">2012년 8월</div><div class="aw-name">🏅 스포츠서울 고객감동 &amp; Power Korea 대상</div><div class="aw-en">Customer Satisfaction &amp; Power Korea Award · Sports Seoul</div><div class="aw-by">스포츠서울</div></div>
+    <div class="award-card"><div class="aw-date">2012년 7월</div><div class="aw-name">🏅 대한민국 자랑스런 혁신인 (혁신교육부문)</div><div class="aw-en">Korea Proud Innovator Award (Education) · Sports Chosun</div><div class="aw-by">스포츠조선</div></div>
+    <div class="award-card"><div class="aw-date">2011년 2월</div><div class="aw-name">🏅 대한체육회 체육상 학술부문 우수상</div><div class="aw-en">KSOC Sports Award — Excellence in Scholarship</div><div class="aw-by">대한체육회장</div></div>
+    <div class="award-card"><div class="aw-date">2010년 9월</div><div class="aw-name">🏅 Hirell Ruskin Scholar Award</div><div class="aw-en">International Scholarship Recognition</div><div class="aw-by">World Leisure Organization</div></div>
+    <div class="award-card"><div class="aw-date">2009년 12월</div><div class="aw-name">🏅 문화체육관광부 장관 표창</div><div class="aw-en">Commendation · Minister of Culture, Sports and Tourism</div><div class="aw-by">문화체육관광부 장관</div></div>
+    <div class="award-card"><div class="aw-date">2009년 12월</div><div class="aw-name">🏅 강릉시장 표창</div><div class="aw-en">Commendation · Mayor of Gangneung</div><div class="aw-by">강릉시장</div></div>
+    <div class="award-card"><div class="aw-date">2002년 12월</div><div class="aw-name">🏅 2002 FIFA 한일월드컵 유공자 표창</div><div class="aw-en">Commendation for Contribution to 2002 FIFA World Cup</div><div class="aw-by">문화관광부 장관</div></div>
   </div>
 </section>
 
